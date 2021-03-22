@@ -18,9 +18,9 @@ else:
             print("Parle")
             audio_data = r.listen(source)
             print("End")
-
+        row_index += 1
         result = r.recognize_google(audio_data, language="fr-FR")
-        fd.write(result)
+        fd.write("\n" + result)
 
 def printCSV(name, row_index):
     with open(name, "r") as fd:
